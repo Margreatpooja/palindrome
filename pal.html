@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pal.css" />
+    <title>palindrome</title>
+  </head>
+  <body>
+    <h1>Palindrome</h1>
+    <div class="input">
+      <div id="word">
+        <label for="inputvalue">lines:</label>
+        <input type="text" id="value" placeholder="Enter your sentences" required />
+      </div>
+      <div id="submit">
+        <button type="button" onclick="change()">Change</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <script>
+      function change() {
+       const word = document.getElementById("value").value
+       const palindrome = word.split("").reverse().join("")
+       let result = document.querySelector("#result") 
+       
+       if(word === palindrome){
+        result.innerHTML = `"${palindrome}" is a palindrome.`
+       }
+       else{
+        result.innerHTML = `"${word}" is not a palindrome.`
+       }
+       
+       
+
+      }
+    </script>
+  </body>
+</html>
